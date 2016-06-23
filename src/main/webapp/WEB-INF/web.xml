@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+
+	<servlet>
+		<servlet-name>hessian</servlet-name>
+		<servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+		<init-param> 
+			<!-- 对外接口 -->
+            <param-name>api-class</param-name> 
+            <param-value>hessianDemo1.DemoApi</param-value> 
+        </init-param> 
+		<init-param>
+			<!-- 服务器对接口的实现 -->
+			<param-name>service-class</param-name>
+			<param-value>hessianDemo1.DemoService</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>hessian</servlet-name>
+		<url-pattern>/helloworld</url-pattern>
+	</servlet-mapping>
+</web-app>
